@@ -10,3 +10,10 @@
 
 ### Checksec
 - `checksec --file filename`
+
+### Tracing
+Checks what the program's doing with the input
+`ltrace` and `strace`(for remote servers)
+`ltrace ./filename`
+
+### Overwriting Variables on the Stack

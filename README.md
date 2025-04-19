@@ -18,8 +18,12 @@ gcc file.c -o vuln -fno-stack-protector -z execstack -no-pie -m32
 - `ctrl + %, v` -> vertical split
 - `ctrl + %, <-/->` -> change to left of right screen
 
-### Checksec
-- `checksec --file filename` or `checksec file=filename`
+### Know your file
+```bash
+checksec --file <filename>` or `checksec file=filename
+```
+
+`file <filename>`
 
 ### Tracing
 Checks what the program's doing with the input
@@ -38,6 +42,9 @@ Checks what the program's doing with the input
 - `cyclic -l <EIP-data>` -> lookup the amount of the data that can be inputted where overflow won't occur in little endian
 - `python2 -c 'print "A"*28 + "\x82\x91\x04\x08"' > payload` -> 28 is the eip data and then the other code.
 - `./ret2win < payload` -> input payload into the file
+- instead, you can just send using `run < payload` inside of gdb-pwndbg
+- `break *addr` -> add a breakpoint at an addr
+- `delete breakpoints` -> delete breakpoints
 
 **IP/EIP/RIP** -> Data where you can go without seg fault (data that can be stored in the variable/line)
 **IP/EIP/RIP** -> Stores the address of the next function that must be executed (overflow this)

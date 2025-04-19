@@ -24,6 +24,7 @@ checksec --file <filename>` or `checksec file=filename
 ```
 
 `file <filename>`
+
 `rabin2 -I <filename>`
 
 ### Tracing
@@ -36,8 +37,12 @@ Checks what the program's doing with the input
 - `rabin2 -i <filename>`
 - `objdump -D <filename> | grep <funcitonname>`
 - `nm -u <filename>`
+
 USER GENERATED FUNCTIONS:
-`rabin2 -qs <filename> | grep -ve imp -e ' 0 '`
+
+```bash
+rabin2 -qs <filename> | grep -ve imp -e ' 0 '
+```
 
 ### Strings inside binary
 ```bash

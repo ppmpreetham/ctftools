@@ -13,7 +13,7 @@ A nice way to use this is
 gcc file.c -o vuln -fno-stack-protector -z execstack -no-pie -m32
 ```
 ### Checksec
-- `checksec --file filename`
+- `checksec --file filename` or `checksec file=filename`
 
 ### Tracing
 Checks what the program's doing with the input
@@ -21,3 +21,7 @@ Checks what the program's doing with the input
 `ltrace ./filename`
 
 ### Overwriting Variables on the Stack
+
+
+### NX enabled
+Try using ropper since it might be an ROP attack

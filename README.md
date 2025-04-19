@@ -24,6 +24,7 @@ checksec --file <filename>` or `checksec file=filename
 ```
 
 `file <filename>`
+`rabin2 -I <filename>`
 
 ### Tracing
 Checks what the program's doing with the input

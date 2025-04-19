@@ -33,10 +33,16 @@ Checks what the program's doing with the input
 
 ### Reading the functions inside
 - `info functions`
-- `rabin2 -i ret2win32`
+- `rabin2 -i <filename>`
 - `objdump -D <filename> | grep <funcitonname>`
+- `nm -u <filename>`
 USER GENERATED FUNCTIONS:
 `rabin2 -qs <filename> | grep -ve imp -e ' 0 '`
+
+### Strings inside binary
+```bash
+rabin2 -z <filename>
+```
 
 ### gdb-pwndbg
 (much faster than loading ghidra and doing stuff from there)

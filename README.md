@@ -19,9 +19,7 @@ gcc file.c -o vuln -fno-stack-protector -z execstack -no-pie -m32
 - `ctrl + %, <-/->` -> change to left of right screen
 
 ### Know your file
-```bash
-checksec --file <filename>` or `checksec file=filename
-```
+`checksec --file <filename>` or `checksec file=filename
 
 `file <filename>`
 

@@ -31,6 +31,11 @@ Checks what the program's doing with the input
 `ltrace` and `strace`(for remote servers)
 `ltrace ./filename`
 
+### Reading the functions inside
+- `info functions`
+- `rabin2 -i ret2win32`
+- `objdump -D <filename> | grep <funcitonname>`
+
 ### gdb-pwndbg
 (much faster than loading ghidra and doing stuff from there)
 - `file <filename>` -> to open the file

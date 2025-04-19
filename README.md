@@ -35,6 +35,8 @@ Checks what the program's doing with the input
 - `info functions`
 - `rabin2 -i ret2win32`
 - `objdump -D <filename> | grep <funcitonname>`
+USER GENERATED FUNCTIONS:
+`rabin2 -qs <filename> | grep -ve imp -e ' 0 '`
 
 ### gdb-pwndbg
 (much faster than loading ghidra and doing stuff from there)

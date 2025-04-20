@@ -33,6 +33,7 @@ Checks what the program's doing with the input
 ### Reading the functions inside
 - `info functions`
 - `rabin2 -i <filename>`
+- `objdump -d ./chal | grep '<.*>:'`
 - `objdump -D <filename> | grep <funcitonname>`
 - `nm -u <filename>`
 

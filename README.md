@@ -112,5 +112,5 @@ Try using ropper since it might be an ROP attack
 
 
 ### Calling Conventions (Linux)
-64-bit: `RDI, RSI, RDX, RCX, R8, R9, [XYZ]MM0–7`
-32-bit: Stack
+- 64-bit: `RDI, RSI, RDX, RCX, R8, R9, Stack`
+- 32-bit: Stack

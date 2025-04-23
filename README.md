@@ -109,3 +109,8 @@ payload = shellcode + b"A" * (80 - len(shellcode)) + b"B"*8 + p64(int(buff_addr,
 
 ### NX enabled
 Try using ropper since it might be an ROP attack
+
+
+### Calling Conventions (Linux)
+64-bit: `RDI, RSI, RDX, RCX, R8, R9, [XYZ]MM0–7`
+32-bit: Stack

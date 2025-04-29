@@ -141,7 +141,8 @@ Usage: `python3 exploit.py <filename>` or `python3 exploit.py 10.10.196.1:4000`
 
 - Finding address of main: `elf.symbols['main']`
 - Finding symbols: `elf.sym`
-- Findind gadgets: `rop.find_gadget(['pop rdi', 'ret']))[0]`
+- Finding gadgets: `rop.find_gadget(['pop rdi', 'ret']))[0]`
+- Finding Strings: `elf.search('/bin/cat flag.txt')` (Just use `rabin2 -z split`)
 
 ### Calling Conventions (Linux)
 - 64-bit: `RDI, RSI, RDX, RCX, R8, R9, Stack`

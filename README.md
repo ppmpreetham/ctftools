@@ -116,9 +116,32 @@ readelf -Ws /usr/lib/x86_64-linux-gnu/libc.so.6 | grep printf
 ```
 
 
-### NX enabled
-Try using ropper since it might be an ROP attack
+### PWN Tools
+```python
+from pwn import *
+import sys
+import os
+from pprint import pprint
 
+if len(sys.argv) <= 2:
+    p = process("./" + sys.argv[1])
+    cmd = "ldd " + sys.argv[1] + " | grep \"libc.so.6\" | awk '{print $3}'"
+    libcpath = os.popen(cmd).read()[:-1]
+    libc = ELF(libcpath)
+else:
+    remote_addr = sys.argv[2].split(":")[0]
+    remote_port = sys.argv[2].split(":")[1]
+    p = remote(remote_addr, int(remote_port))
+
+elf = ELF(sys.argv[1])
+rop = ROP(elf)
+```
+
+Usage: `python3 exploit.py <filename>` or `python3 exploit.py 10.10.196.1:4000`
+
+- Finding address of main: `elf.symbols['main']`
+- Finding symbols: `elf.sym`
+- Findind gadgets: `rop.find_gadget(['pop rdi', 'ret']))[0]`
 
 ### Calling Conventions (Linux)
 - 64-bit: `RDI, RSI, RDX, RCX, R8, R9, Stack`
